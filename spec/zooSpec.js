@@ -12,10 +12,9 @@ describe('Zoo', function(){
     lion = new Animal("Snoop",10,"lion");
   });
 
-//needs to check location...
   describe('#changeLocation', function(){
     it('should change locations', function(){
-      expect(zoo.changeLocation("denver")).toContain("denver");
+      expect(zoo.changeLocation("Denver")).toEqual(this.location = "The zoo has been moved to Denver");
     });
   });
 
@@ -47,24 +46,29 @@ describe('Zoo', function(){
 
   describe('#addAnimal', function(){
     it('should only add an animal to the animals array when the zoo is open', function(){
-      // add spec
+      zoo.status = "closed"
+      expect(zoo.addAnimal(pig)).toEqual("Sorry, we can't take that creature.");
+
     });
     it('should add an animal to the animals array', function(){
-      // add spec
+      zoo.status = "closed";
+      expect(zoo.addAnimal(pig)).toEqual('Sorry, we can\'t take that creature.');
     });
 
     it('should only add instances of animals', function(){
-      // add spec
+      expect(zoo.addAnimal()).toEqual('Sorry, we can\'t take that creature.');
     });
 
     it('should not add duplicates', function(){
-      // add spec
+      zoo.animals =[pig];
+      expect(zoo.addAnimal()).toEqual('Sorry, we can\'t take that creature.');
     });
   });
 
   describe('#removeAnimal', function(){
     it('should remove an animal from the animals array if the zoo is open', function(){
-      // add spec
+      zoo.animals =[pig];
+      expect(zoo.removeAnimal()).toEqual("You can\'t have that animal!");
     });
   });
 });

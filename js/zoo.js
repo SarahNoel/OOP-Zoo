@@ -1,3 +1,10 @@
+var Animal = function(name, age, kind){
+  this.name = name;
+  this.age = age;
+  this.kind = kind;
+  this.awake = false;
+};
+
 var Zoo = function(name, location, status){
   this.name = name;
   this.location = location;
@@ -7,6 +14,7 @@ var Zoo = function(name, location, status){
 
 Zoo.prototype.changeLocation = function(newLocale){
   this.location = newLocale;
+  return "The zoo has been moved to " + newLocale;
 };
 
 Zoo.prototype.open = function(){
@@ -30,7 +38,7 @@ Zoo.prototype.isOpen = function(){
 Zoo.prototype.addAnimal = function(animal){
   if(this.status === "open" && animal instanceof Animal === true && this.animals.indexOf(animal) === -1){
     this.animals.push(animal);
-    return "Thanks for the animal!"
+    return "Thanks for the animal!";
   }
   else{
     return "Sorry, we can't take that creature.";
