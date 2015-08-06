@@ -1,5 +1,3 @@
-$(document).on('ready', function() {
-
 var Animal = function(name, age, kind){
   this.name = name;
   this.age = age;
@@ -8,8 +6,8 @@ var Animal = function(name, age, kind){
 };
 
 Animal.prototype.oink = function() {
-  if (this.kind === "pig") {
-    return "oink!";
+  if (this.kind.toUpperCase() === "PIG") {
+    return "oink";
   }else{
     return "I shan't oink, for I am no pig";
   }
@@ -29,17 +27,21 @@ Animal.prototype.feed = function(){
 
 Animal.prototype.wakeUp = function(){
   this.awake = true;
-  return "I'm awake!";
+  return true;
 };
 
 Animal.prototype.sleep = function(){
   this.awake = false;
-  return "zzzzzz";
+  return false;
 };
 
 
 var pig = new Animal("Charlotte", 2, "pig");
 var dinosaur = new Animal("Blue", 4, "Velociraptor");
 
-});//end of document
+console.log(pig);
+console.log(dinosaur);
 
+console.log(pig.growUp());
+
+module.exports = Animal;
