@@ -36,9 +36,9 @@ Zoo.prototype.isOpen = function(){
 };
 
 Zoo.prototype.addAnimal = function(animal){
-  if(this.status === "open" && animal instanceof Animal === true && this.animals.indexOf(animal) === -1){
+  if((this.status === "open") && (this.animals.indexOf(animal) === -1) && (animal instanceof Animal)){
     this.animals.push(animal);
-    return "Thanks for the animal!";
+    return this.animals;
   }
   else{
     return "Sorry, we can't take that creature.";
@@ -47,7 +47,9 @@ Zoo.prototype.addAnimal = function(animal){
 
 Zoo.prototype.removeAnimal = function(animal){
   if(this.status ==="open"){
-    this.animals.splice(animal);
+    var index;
+    index = this.animals.indexOf(animal);
+    this.animals.splice(index, 1);
     return "Goodbye, animal.";
   }else{
     return "You can't have that animal!";
