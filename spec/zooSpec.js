@@ -14,14 +14,14 @@ describe('Zoo', function(){
 
   describe('#changeLocation', function(){
     it('should change locations', function(){
-      expect(zoo.changeLocation("Denver")).toEqual(this.location = "The zoo has been moved to Denver");
+      expect(zoo.changeLocation("Denver")).toEqual(zoo.location = "Denver");
     });
   });
 
   describe('#open', function(){
     it('should change status to open', function(){
       zoo.status = "closed";
-      expect(zoo.open()).toEqual('The zoo is now open!');
+      expect(zoo.open()).toEqual(zoo.status = "open");
     });
   });
 
@@ -46,7 +46,7 @@ describe('Zoo', function(){
 
   describe('#addAnimal', function(){
     it('should only add an animal to the animals array when the zoo is open', function(){
-      zoo.status = "closed"
+      zoo.status = "closed";
       expect(zoo.addAnimal(pig)).toEqual("Sorry, we can't take that creature.");
 
     });
@@ -68,7 +68,7 @@ describe('Zoo', function(){
   describe('#removeAnimal', function(){
     it('should remove an animal from the animals array if the zoo is open', function(){
       zoo.animals =[pig];
-      expect(zoo.removeAnimal()).toEqual("You can\'t have that animal!");
+      expect(zoo.removeAnimal()).toEqual(zoo.animals = [pig]);
     });
   });
 });

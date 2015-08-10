@@ -14,17 +14,16 @@ var Zoo = function(name, location, status){
 
 Zoo.prototype.changeLocation = function(newLocale){
   this.location = newLocale;
-  return "The zoo has been moved to " + newLocale;
+  return newLocale;
 };
 
 Zoo.prototype.open = function(){
   this.status = "open";
-  return "The zoo is now open!";
+  return this.status;
 };
 
 Zoo.prototype.close = function(){
   this.status = "closed";
-  return "The zoo is now closed.";
 };
 
 Zoo.prototype.isOpen = function(){
@@ -50,10 +49,8 @@ Zoo.prototype.removeAnimal = function(animal){
     var index;
     index = this.animals.indexOf(animal);
     this.animals.splice(index, 1);
-    return "Goodbye, animal.";
-  }else{
-    return "You can't have that animal!";
   }
+  return this.animals;
 };
 
 var sanDiego = new Zoo("San Diego Zoo", "San Diego", "open");

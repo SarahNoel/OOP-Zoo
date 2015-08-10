@@ -39,9 +39,4 @@ Animal.prototype.sleep = function(){
 var pig = new Animal("Charlotte", 2, "pig");
 var dinosaur = new Animal("Blue", 4, "Velociraptor");
 
-console.log(pig);
-console.log(dinosaur);
-
-console.log(pig.growUp());
-
 module.exports = Animal;
