@@ -29,7 +29,7 @@ describe('Zoo', function(){
   describe('#isOpen', function(){
     it('should see if the zoo is open', function(){
       zoo.status = "open";
-      expect(zoo.isOpen()).toEqual("!");
+      expect(zoo.isOpen()).toEqual("Open!");
     });
     it('should see if the zoo is closed', function(){
       zoo.status = "closed";
