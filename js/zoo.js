@@ -32,11 +32,11 @@ Zoo.prototype.close = function(){
 };
 
 Zoo.prototype.isOpen = function(){
-  if(this.status === "open"){
-    return "Open!";
-  }else{
-    return "Closed";
-  }
+  // if(this.status === "open"){
+  //   return "Open!";
+  // }else{
+  //   return "Closed";
+  // }
 };
 
 //adds Animal to Zoo if it is open and the animal is an Animal instance
